@@ -1,0 +1,15 @@
+import pandas as pd
+
+xls = pd.ExcelFile('db.xlsx')
+med = pd.read_excel(xls, 'med')
+cuc = pd.read_excel(xls, 'cuc')
+bog = pd.read_excel(xls, 'bog')
+bar = pd.read_excel(xls, 'bar')
+buc = pd.read_excel(xls, 'buc')
+vil = pd.read_excel(xls, 'vil')
+cal = pd.read_excel(xls, 'cal')
+nei = pd.read_excel(xls, 'nei')
+mon = pd.read_excel(xls, 'mon')
+car = pd.read_excel(xls, 'car')
+df=pd.concat([med,cuc,bog,bar,buc,vil,cal,nei,mon,car], ignore_index=True)
+df.to_csv('database.csv')
